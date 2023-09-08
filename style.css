@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    background-color: #07343B;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    height: 90vh ;
+    background-color: gainsboro;
+    padding-top: 20px;
+    text-align: center;  
+}
+h1{
+    color: #07343B;
+}
+.content {
+    margin-top: 20px;
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.content img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+.data{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 20px;
+
+}
