@@ -15,20 +15,16 @@
                     <img src="https://avatars.githubusercontent.com/u/75392925?v=4" 
                     alt="Kafayat Adgun"
                     data-testid="slackDisplayImage">
-                    <div class="data" >
-                        <p>Current Day of the Week:</p>
+                    
                         <p data-testid="currentDayOfTheWeek"></p>
-                    </div>
-                    <div class="data" >
-                        <p>Current UTC Time:</p>
+                  
                         <p data-testid="currentUTCTime"></p>
+                    
+                        <p>Track: Frontend</p>
                     </div>
-                    <div class="data" data-testid="myTrack">
-                        <p>Track:Frontend</p>
-                    </div>
-                    <div class="data" data-testid="githubURL">
+                
                         <p><a href="https://github.com/Kathy-kay/Hng-Task-1">GitHub Repository</a></p>
-                    </div>
+                
             </div>
         </div>
     </main>
@@ -49,8 +45,8 @@
         const Dayoftheweek = Daysinaweek[today.getDay()];
 
         
-        currentDayOfTheWeek.textContent = ` ${Dayoftheweek}`;
-        currentUTCTime.textContent = `  ${today.getTime()} milliseconds`;
+        currentDayOfTheWeek.textContent = ` Day of the week: ${Dayoftheweek}`;
+        currentUTCTime.textContent = `UTC Time:  ${today.getTime()} milliseconds`;
     }
 
     DayandTime();
