@@ -15,21 +15,19 @@
                     <img src="https://avatars.githubusercontent.com/u/75392925?v=4" 
                     alt="Kafayat Adgun"
                     data-testid="slackDisplayImage">
-                    <div class="data" data-testid="currentDayOfTheWeek">
+                    <div class="data" >
                         <p>Current Day of the Week:</p>
-                        <p id="dayOfTheWeek"></p>
+                        <p data-testid="currentDayOfTheWeek"></p>
                     </div>
-                    <div class="data" data-testid="currentUTCTime">
+                    <div class="data" >
                         <p>Current UTC Time:</p>
-                        <p id="clock"></p>
+                        <p data-testid="currentUTCTime"></p>
                     </div>
                     <div class="data" data-testid="myTrack">
-                        <p>Track:</p>
-                        <p>Frontend</p>
+                        <p>Track:Frontend</p>
                     </div>
                     <div class="data" data-testid="githubURL">
-                        <p>GitHub Repository:</p>
-                        <p><a href="https://github.com/Kathy-kay/Hng-Task-1">Click here</a></p>
+                        <p><a href="https://github.com/Kathy-kay/Hng-Task-1">GitHub Repository</a></p>
                     </div>
             </div>
         </div>
@@ -38,44 +36,24 @@
 </html>
 <script>
 
-    const clock = document.getElementById("clock");
+    function DayandTime() {
+            
+        const currentDayOfTheWeek = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+        const currentUTCTime = document.querySelector('[data-testid="currentUTCTime"]');
 
-    const showTime = () => {
-      const time = new Date();
-      let [hour, min, sec] = [time.getHours(), time.getMinutes(), time.getSeconds()];
-      let am_pm = "AM";
-    
-      if (hour >= 12) {
-        if (hour > 12) hour -= 12;
-        am_pm = "PM";
-      } else if (hour === 0) {
-        hour = 12;
-        am_pm = "AM";
-      }
-    
-      const currentTime = `${hour}:${min}:${sec} ${am_pm}`;
-    
-      clock.textContent = currentTime;
-    
-      // Increment seconds, minutes, and hours
-      sec++;
-      if (sec === 60) {
-        sec = 0;
-        min++;
-      }
-      if (min === 60) {
-        min = 0;
-        hour++;
-      }
-    
-      // If the hour has changed, adjust for 12-hour format
-      if (hour === 12 && hour !== 12) {
-        am_pm = am_pm === "AM" ? "PM" : "AM";
-      }
-    
-      clock.textContent = `${hour}:${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")} ${am_pm}`;
-    };
-    
-    setInterval(showTime, 1000);
+        const today = new Date();
+        
+        
+        const Daysinaweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
+        const Dayoftheweek = Daysinaweek[today.getDay()];
 
+        
+        currentDayOfTheWeek.textContent = ` ${Dayoftheweek}`;
+        currentUTCTime.textContent = `  ${today.getTime()} milliseconds`;
+    }
+
+    DayandTime();
+    
+    setInterval(DayandTime, 1000);
 </script>
