@@ -23,7 +23,7 @@
                         <p>Track: Frontend</p>
                     </div>
                 
-                        <p><a href="https://github.com/Kathy-kay/Hng-Task-1">GitHub Repository</a></p>
+                        <p><a href="https://github.com/Kathy-kay/Hng-Task-1" data-testid="githubURL">GitHub Repository</a></p>
                 
             </div>
         </div>
@@ -45,8 +45,8 @@
         const Dayoftheweek = Daysinaweek[today.getDay()];
 
         
-        currentDayOfTheWeek.textContent = ` Day of the week: ${Dayoftheweek}`;
-        currentUTCTime.textContent = `UTC Time:  ${today.getTime()} milliseconds`;
+        currentDayOfTheWeek.textContent = ` ${Dayoftheweek}`;
+        currentUTCTime.textContent = `${today.getTime()} milliseconds`;
     }
 
     DayandTime();
